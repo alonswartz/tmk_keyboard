@@ -39,7 +39,7 @@
 #----------------------------------------------------------------------------
 
 # Target file name (without extension).
-TARGET = gh60_lufa
+TARGET = blackhawk_lufa
 
 # Directory common source filess exist
 TMK_DIR = ../../tmk_core
@@ -108,7 +108,7 @@ OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 #   Atmel DFU loader 4096
 #   LUFA bootloader  4096
 #   USBaspLoader     2048
-OPT_DEFS += -DBOOTLOADER_SIZE=4096
+OPT_DEFS += -DBOOTLOADER_SIZE=512
 
 
 # Build Options
@@ -120,7 +120,7 @@ EXTRAKEY_ENABLE = yes	# Audio control and System control(+450)
 CONSOLE_ENABLE = yes	# Console for debug(+400)
 COMMAND_ENABLE = yes    # Commands for debug and configuration
 #SLEEP_LED_ENABLE = yes  # Breathing sleep LED during USB suspend
-NKRO_ENABLE = yes	# USB Nkey Rollover - not yet supported in LUFA
+#NKRO_ENABLE = yes       # USB Nkey Rollover - not yet supported in LUFA
 
 
 # Optimize size but this may cause error "relocation truncated to fit"
