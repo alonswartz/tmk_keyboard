@@ -26,7 +26,7 @@ void led_set(uint8_t usb_led)
         DDRD |= (1<<4);
         PORTD &= ~(1<<4);
     } else {
-        DDRD &= (1<<4);
+        DDRD &= ~(1<<4);
         PORTD &= ~(1<<4);
     }
 }
