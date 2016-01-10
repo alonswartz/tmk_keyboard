@@ -10,10 +10,10 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Layer 1: Symbols and numpad
     KEYMAP(
-        FN10,FN11,FN12,FN21,FN22,FN23,          FN15,7,   8,   9,   FN24,BSPC,\
-        TRNS,FN13,FN14,FN19,FN20,BSLS,NO,  NO,  SLSH,4,   5,   6,   MINS,FN25,\
-        TRNS,FN16,FN17,LBRC,RBRC,FN26,NO,  NO,  FN18,1,   2,   3,   EQL, TRNS,\
-        NO,  GRV, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,0,   COMM,DOT, ENT, NO),
+        NO,  FN11,FN12,FN21,FN22,FN23,          FN15,7,   8,   9,   FN24,BSPC,\
+        TRNS,FN13,FN14,FN19,FN20,BSLS,FN10,NO,  SLSH,4,   5,   6,   MINS,FN25,\
+        TRNS,FN16,FN17,LBRC,RBRC,FN26,GRV, NO,  FN18,1,   2,   3,   EQL, TRNS,\
+        NO,  NO,  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,0,   COMM,DOT, ENT, NO),
 
     // Layer 2: Navigation and F keys
     KEYMAP(
