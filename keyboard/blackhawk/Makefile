@@ -122,6 +122,9 @@ COMMAND_ENABLE = yes    # Commands for debug and configuration
 #SLEEP_LED_ENABLE = yes  # Breathing sleep LED during USB suspend
 #NKRO_ENABLE = yes       # USB Nkey Rollover - not yet supported in LUFA
 
+PS2_MOUSE_ENABLE = yes  # PS/2 mouse(TrackPoint) support
+PS2_USE_USART = yes     # hardware USART engine for PS/2 signal receive
+#PS2_MOUSE_DEBUG = yes
 
 # Optimize size but this may cause error "relocation truncated to fit"
 #EXTRALDFLAGS = -Wl,--relax
@@ -131,5 +134,6 @@ VPATH += $(TARGET_DIR)
 VPATH += $(TMK_DIR)
 
 include $(TMK_DIR)/protocol/lufa.mk
+include $(TMK_DIR)/protocol.mk      # Enables PS/2 Trackpoint
 include $(TMK_DIR)/common.mk
 include $(TMK_DIR)/rules.mk
