@@ -33,6 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "nodebug.h"
 #endif
 
+int tp_buttons;
 
 void action_exec(keyevent_t event)
 {
@@ -201,11 +202,35 @@ void process_action(keyrecord_t *record)
         /* Mouse key */
         case ACT_MOUSEKEY:
             if (event.pressed) {
-                mousekey_on(action.key.code);
-                mousekey_send();
+                switch (action.key.code) {
+                    case KC_MS_BTN1:
+                        tp_buttons |= (1<<0);
+                        break;
+                    case KC_MS_BTN2:
+                        tp_buttons |= (1<<1);
+                        break;
+                    case KC_MS_BTN3:
+                        tp_buttons |= (1<<2);
+                        break;
+                    default:
+                        mousekey_on(action.key.code);
+                        mousekey_send();
+                }
             } else {
-                mousekey_off(action.key.code);
-                mousekey_send();
+                switch (action.key.code) {
+                    case KC_MS_BTN1:
+                        tp_buttons &= ~(1<<0);
+                        break;
+                    case KC_MS_BTN2:
+                        tp_buttons &= ~(1<<1);
+                        break;
+                    case KC_MS_BTN3:
+                        tp_buttons &= ~(1<<2);
+                        break;
+                    default:
+                        mousekey_off(action.key.code);
+                        mousekey_send();
+                }
             }
             break;
 #endif

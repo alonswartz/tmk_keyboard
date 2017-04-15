@@ -73,12 +73,13 @@ void ps2_mouse_task(void)
     enum { SCROLL_NONE, SCROLL_BTN, SCROLL_SENT };
     static uint8_t scroll_state = SCROLL_NONE;
     static uint8_t buttons_prev = 0;
+    extern tp_buttons;
 
     /* receives packet from mouse */
     uint8_t rcv;
     rcv = ps2_host_send(PS2_MOUSE_READ_DATA);
     if (rcv == PS2_ACK) {
-        mouse_report.buttons = ps2_host_recv_response();
+        mouse_report.buttons = ps2_host_recv_response() | tp_buttons;
         mouse_report.x = ps2_host_recv_response();
         mouse_report.y = ps2_host_recv_response();
     } else {
