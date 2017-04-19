@@ -45,7 +45,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #ifdef PS2_MOUSE_ENABLE
 static uint32_t ps2_mouse_poll_time = 0;
-static int ps2_mouse_poll_interval = 10; // milliseconds
+static int ps2_mouse_poll_interval = 20; // milliseconds
 #endif
 
 #ifdef MATRIX_HAS_GHOST
